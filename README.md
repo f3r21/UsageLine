@@ -52,6 +52,23 @@ brew tap f3r21/tap
 brew install --cask usageline
 ```
 
+If your Homebrew has tap-trust checks enabled, the first install from a tap
+you've never used before gets refused:
+
+```
+Error: Refusing to load cask f3r21/tap/usageline from untrusted tap f3r21/tap.
+```
+
+That's expected the first time — run the one-liner it suggests, then retry:
+
+```bash
+brew trust --cask f3r21/tap/usageline
+brew install --cask usageline
+```
+
+This only trusts this one cask (not the whole tap, not future casks from it),
+and only needs to happen once per machine.
+
 ---
 
 ## Don't even want to double-click an app?
