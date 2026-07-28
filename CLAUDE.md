@@ -171,7 +171,10 @@ codesign --force --deep --sign - /Applications/UsageLine.app && xattr -d com.app
 
 `resources/usageline.rb` is a **source copy only** (mirrors Margherita's own
 `resources/margherita.rb` convention) — the cask Homebrew actually reads
-would live at `Casks/usageline.rb` in the `f3r21/homebrew-tap` repo, synced
-manually after each tagged release. Neither the tap entry nor the
-`f3r21/UsageLine` GitHub repo exist yet as of this writing — `release.yml`
-and the cask both reference them as placeholders.
+lives at `Casks/usageline.rb` in the `f3r21/homebrew-tap` repo (same tap that
+serves Margherita's `Casks/margherita.rb`), synced manually after each tagged
+release: neither `release.yml` nor anything else automates keeping
+`version`/`sha256` in sync between the release and **both** cask copies —
+same manual two-copy dance documented in `../native/CLAUDE.md`. `f3r21/UsageLine`
+and the `f3r21/homebrew-tap` entry are both real as of `v0.1.0` (first
+published 2026-07-28).
